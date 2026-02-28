@@ -15,10 +15,10 @@ object EloCalculator {
 
     // ── Constants ─────────────────────────────────────────────
 
-    private const val K_BASE       = 32.0   // max rating change per game (new players)
-    private const val K_EXPERIENCED = 16.0  // K-factor after 30+ games
-    private const val K_THRESHOLD  = 30     // games before K reduction
-    private const val DECISION_BONUS_MAX = 0.25  // up to 25% bonus for great thinking
+    private const val K_BASE            = 32.0  // max rating change per game (new players)
+    private const val K_EXPERIENCED     = 16.0  // K-factor after 30+ games
+    private const val K_THRESHOLD       = 30    // games before K reduction
+    private const val DECISION_BONUS_MAX = 0.25 // up to 25% bonus for great thinking
 
     // ── Main calculation ──────────────────────────────────────
 
@@ -39,13 +39,13 @@ object EloCalculator {
         gamesPlayed:      Int,
         decisionAccuracy: Float = 0.7f
     ): Pair<Int, Int> {
-        val k = kFactor(gamesPlayed)
+        val k        = kFactor(gamesPlayed)
         val expected = expectedScore(currentRating, opponentRating)
-        val base = k * (score - expected)
+        val base     = k * (score - expected)
 
         // Decision quality multiplier: great thinking = bonus points, poor = penalty
         val decisionMult = 1.0 + (decisionAccuracy - 0.5) * DECISION_BONUS_MAX * 2
-        val delta = (base * decisionMult).roundToInt()
+        val delta        = Math.round(base * decisionMult).toInt()
 
         val newRating = (currentRating + delta).coerceIn(100, 3000)
         return Pair(newRating, delta)
@@ -88,10 +88,10 @@ object EloCalculator {
         solved:        Boolean,
         attemptCount:  Int = 1
     ): Int {
-        val k = if (attemptCount == 1) 20.0 else 10.0
-        val score = if (solved) 1.0 else 0.0
+        val k        = if (attemptCount == 1) 20.0 else 10.0
+        val score    = if (solved) 1.0 else 0.0
         val expected = expectedScore(playerRating, puzzleRating)
-        return (k * (score - expected)).roundToInt()
+        return Math.round(k * (score - expected)).toInt()
     }
 
     /**
@@ -101,16 +101,12 @@ object EloCalculator {
     fun performanceRating(results: List<Pair<Int, Double>>): Int {
         if (results.isEmpty()) return 1200
         val avgOpponent = results.map { it.first }.average()
-        val score = results.sumOf { it.second } / results.size
+        val score       = results.sumOf { it.second } / results.size
         val dp = when {
             score >= 1.0  ->  800.0
             score <= 0.0  -> -800.0
             else          -> -400.0 * log10(1.0 / score - 1.0)
         }
-        return (avgOpponent + dp).roundToInt().coerceIn(100, 3000)
+        return Math.round(avgOpponent + dp).toInt().coerceIn(100, 3000)
     }
-
-    private fun Double.roundToInt() = kotlin.math.roundToInt(this)
 }
-
-private fun kotlin.math.roundToInt(d: Double): Int = Math.round(d).toInt()
