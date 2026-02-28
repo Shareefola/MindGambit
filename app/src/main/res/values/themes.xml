@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ============================================================
+     MindGambit — Theme Resources
+     Light theme is default. Material 3 / Compose handles colours
+     at runtime via Theme.kt — this XML is for the Activity window
+     chrome (status bar, splash screen, etc.)
+     ============================================================ -->
+<resources>
+
+    <!-- Base application theme (light default) -->
+    <style name="Theme.MindGambit" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Status bar / nav bar handled by Compose via enableEdgeToEdge() -->
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/background_light</item>
+        <item name="android:navigationBarColor">@color/background_light</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <!-- Splash screen theme — shown before Compose renders -->
+    <style name="Theme.MindGambit.Splash" parent="Theme.SplashScreen">
+        <!-- Background colour of the splash screen -->
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <!-- Animated icon (chess knight) — see res/drawable/ic_splash_knight.xml -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <!-- Duration the icon animation plays (ms) -->
+        <item name="windowSplashScreenAnimationDuration">800</item>
+        <!-- Theme to switch to once splash exits -->
+        <item name="postSplashScreenTheme">@style/Theme.MindGambit</item>
+        <!-- Branding image below the icon (optional) -->
+        <!-- <item name="windowSplashScreenBrandingImage">@drawable/splash_branding</item> -->
+    </style>
+
+</resources>

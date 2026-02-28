@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ============================================================
+     MindGambit — String Resources
+     No hardcoded strings in code — everything lives here.
+     ============================================================ -->
+<resources>
+
+    <!-- App -->
+    <string name="app_name">MindGambit</string>
+    <string name="app_tagline">Chess Intelligence Platform</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_openings">Open</string>
+    <string name="nav_train">Train</string>
+    <string name="nav_tactics">Tactics</string>
+    <string name="nav_ladder">Ladder</string>
+
+    <!-- Home Screen -->
+    <string name="home_greeting_morning">Good morning</string>
+    <string name="home_greeting_afternoon">Good afternoon</string>
+    <string name="home_greeting_evening">Good evening</string>
+    <string name="home_rapid_rating">Rapid Rating</string>
+    <string name="home_train_today">Train Today</string>
+    <string name="home_play_rapid">Play Rapid</string>
+    <string name="home_play_blitz">Blitz</string>
+    <string name="home_daily_puzzle">Daily Puzzle</string>
+    <string name="home_openings">Openings</string>
+    <string name="home_decision_protocol">Decision Protocol</string>
+    <string name="home_decision_active">5-Step Thinking Active</string>
+    <string name="home_decision_subtitle">CCT Scanner · BlunderGuard · Eval Mode</string>
+    <string name="home_stat_streak">Day Streak</string>
+    <string name="home_stat_accuracy">Accuracy</string>
+    <string name="home_stat_puzzles">Puzzles</string>
+
+    <!-- Board Screen -->
+    <string name="board_you">You</string>
+    <string name="board_opponent">Opponent</string>
+    <string name="board_resign">Resign</string>
+    <string name="board_resign_confirm">Are you sure you want to resign?</string>
+    <string name="board_draw_offer">Offer Draw</string>
+    <string name="board_draw_offered">Draw offered</string>
+    <string name="board_hint">Hint</string>
+    <string name="board_undo">Undo</string>
+    <string name="board_promote_pawn">Promote Pawn</string>
+    <string name="board_game_over">Game Over</string>
+    <string name="board_you_won">You won!</string>
+    <string name="board_you_lost">You lost.</string>
+    <string name="board_draw">Draw</string>
+
+    <!-- Tactics Screen -->
+    <string name="tactics_title">Tactics</string>
+    <string name="tactics_solved">solved</string>
+    <string name="tactics_white_to_move">White to move.</string>
+    <string name="tactics_black_to_move">Black to move.</string>
+    <string name="tactics_find_best">Find the best continuation.</string>
+    <string name="tactics_skip">Skip</string>
+    <string name="tactics_hint">💡 Hint</string>
+    <string name="tactics_next_puzzle">Next Puzzle →</string>
+    <string name="tactics_feedback_brilliant">✦ Brilliant!</string>
+    <string name="tactics_feedback_correct">✓ Correct!</string>
+    <string name="tactics_feedback_wrong">✗ Not quite. Try again.</string>
+    <string name="tactics_feedback_failed">✗ Puzzle failed.</string>
+
+    <!-- Openings Screen -->
+    <string name="openings_title">Repertoire</string>
+    <string name="openings_subtitle">Your opening paths</string>
+    <string name="openings_lessons">lessons</string>
+    <string name="openings_london">London System</string>
+    <string name="openings_london_tag">Structure &amp; Control</string>
+    <string name="openings_jobava">Jobava London</string>
+    <string name="openings_jobava_tag">Aggressive Attack</string>
+    <string name="openings_pirc">Pirc Defense</string>
+    <string name="openings_pirc_tag">Dynamic Counterplay</string>
+    <string name="lesson_complete">✓ Lesson Complete</string>
+    <string name="lesson_locked">Locked</string>
+    <string name="lesson_previous">← Previous</string>
+    <string name="lesson_next">Next →</string>
+    <string name="lesson_finish">Finish →</string>
+
+    <!-- Ladder Screen -->
+    <string name="ladder_title">Elo Ladder</string>
+    <string name="ladder_season">Season 3</string>
+    <string name="ladder_all_ratings">All Ratings</string>
+    <string name="ladder_tier_progress">Tier Progress</string>
+    <string name="ladder_cleared">✓ Cleared</string>
+    <string name="ladder_active">● Active</string>
+    <string name="ladder_locked">Locked</string>
+    <string name="ladder_this_month">this month</string>
+
+    <!-- Rating Modes -->
+    <string name="mode_rapid">Rapid</string>
+    <string name="mode_blitz">Blitz</string>
+    <string name="mode_tactical">Tactical</string>
+    <string name="mode_strategic">Strategic</string>
+
+    <!-- Tier Names -->
+    <string name="tier_novice">Novice</string>
+    <string name="tier_beginner">Beginner</string>
+    <string name="tier_improving">Improving</string>
+    <string name="tier_intermediate">Intermediate</string>
+    <string name="tier_advanced">Advanced Club</string>
+    <string name="tier_elite">Elite Track</string>
+
+    <!-- Review Screen -->
+    <string name="review_title">Game Review</string>
+    <string name="review_accuracy">Accuracy</string>
+    <string name="review_move_analysis">Move Analysis</string>
+    <string name="review_position">Position</string>
+    <string name="review_rating_history">Rating History</string>
+    <string name="review_victory">Victory</string>
+    <string name="review_defeat">Defeat</string>
+    <string name="review_draw">Draw</string>
+
+    <!-- Move Quality -->
+    <string name="quality_brilliant">Brilliant</string>
+    <string name="quality_good">Good</string>
+    <string name="quality_inaccuracy">Inaccuracy</string>
+    <string name="quality_mistake">Mistake</string>
+    <string name="quality_blunder">Blunder</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_continue">Continue</string>
+    <string name="onboarding_start">Start Playing ♟</string>
+    <string name="onboarding_welcome_title">MindGambit</string>
+    <string name="onboarding_welcome_sub">Chess Intelligence Platform</string>
+    <string name="onboarding_welcome_body">Master chess through intelligent training, real-time analysis, and structured learning.</string>
+    <string name="onboarding_level_title">What\'s your level?</string>
+    <string name="onboarding_level_sub">We\'ll set your starting rating and calibrate the training difficulty.</string>
+    <string name="onboarding_features_title">Everything you need</string>
+    <string name="onboarding_features_sub">A complete chess training ecosystem, built around how you actually improve.</string>
+    <string name="onboarding_ready_title">You\'re ready.</string>
+    <string name="onboarding_ready_sub">Your journey to chess mastery starts with a single move. Make it count.</string>
+
+    <!-- Error Messages -->
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_engine_init">Chess engine failed to initialise.</string>
+    <string name="error_no_puzzle">No puzzle available. Check back soon.</string>
+
+    <!-- Accessibility -->
+    <string name="cd_back">Back</string>
+    <string name="cd_avatar">User profile</string>
+    <string name="cd_chess_piece">Chess piece</string>
+    <string name="cd_chess_square">Chess square</string>
+    <string name="cd_selected_square">Selected square</string>
+
+</resources>

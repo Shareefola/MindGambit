@@ -1,0 +1,41 @@
+# ============================================================
+# MindGambit — .gitignore
+# ============================================================
+
+# KEYSTORE — NEVER COMMIT
+keystore/
+*.jks
+*.keystore
+
+# Build outputs
+/build
+app/build/
+**/build/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Local config
+local.properties
+google-services.json
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+
+# Test results
+app/src/androidTest/
+*.hprof

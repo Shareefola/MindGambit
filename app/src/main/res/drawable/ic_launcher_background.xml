@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Adaptive icon background — deep obsidian with subtle chess board texture -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Solid background -->
+    <path
+        android:fillColor="#1A1814"
+        android:pathData="M0,0 H108 V108 H0 Z" />
+
+    <!-- Subtle grid lines (very dark) -->
+    <path
+        android:strokeColor="#22B8862E"
+        android:strokeWidth="0.5"
+        android:pathData="M27,0 V108 M54,0 V108 M81,0 V108 M0,27 H108 M0,54 H108 M0,81 H108" />
+
+    <!-- Corner chess squares (alternating, very subtle) -->
+    <path
+        android:fillColor="#14B8862E"
+        android:pathData="M0,0 H27 V27 H0Z M27,27 H54 V54 H27Z M54,0 H81 V27 H54Z M81,27 H108 V54 H81Z M0,54 H27 V81 H0Z M27,81 H54 V108 H27Z M54,54 H81 V81 H54Z M81,81 H108 V108 H81Z" />
+
+</vector>

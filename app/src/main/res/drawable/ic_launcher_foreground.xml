@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ============================================================
+     MindGambit — Launcher Foreground Icon
+     Stylised chess knight in gold, designed for adaptive icon.
+     ============================================================ -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Gold knight silhouette, centred in the 108dp safe zone -->
+    <group android:translateX="16" android:translateY="8">
+
+        <!-- Base -->
+        <path
+            android:fillColor="#B8862E"
+            android:pathData="M16,68 L60,68 L58,72 L18,72 Z" />
+
+        <!-- Knight body -->
+        <path
+            android:fillColor="#B8862E"
+            android:pathData="
+                M30,68
+                C28,60 22,50 24,38
+                C26,28 34,20 42,16
+                C46,14 50,14 52,16
+                C56,18 58,24 56,30
+                C54,34 50,36 48,38
+                C52,36 56,34 56,30
+                C56,26 54,22 50,20
+                C46,18 40,20 36,26
+                C32,32 30,40 32,48
+                C34,56 36,62 36,68
+                Z" />
+
+        <!-- Mane / neck detail -->
+        <path
+            android:fillColor="#C9952E"
+            android:pathData="
+                M40,68
+                C38,60 36,52 38,42
+                C40,34 46,26 52,22
+                C54,28 52,34 48,38
+                C44,42 42,50 42,58
+                Z" />
+
+        <!-- Eye -->
+        <ellipse
+            android:fillColor="#1A1814"
+            android:centerX="46"
+            android:centerY="28"
+            android:radiusX="2.5"
+            android:radiusY="2.5" />
+
+        <!-- Nostril -->
+        <ellipse
+            android:fillColor="#1A1814"
+            android:centerX="53"
+            android:centerY="35"
+            android:radiusX="1.5"
+            android:radiusY="1.5" />
+
+    </group>
+
+</vector>

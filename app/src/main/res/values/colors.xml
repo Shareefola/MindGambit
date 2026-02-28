@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ============================================================
+     MindGambit — Color Resources
+     These XML colors are used only by themes.xml and the splash
+     screen. All runtime colors are defined in Color.kt (Compose).
+     ============================================================ -->
+<resources>
+
+    <!-- Background -->
+    <color name="background_light">#FAFAF7</color>
+    <color name="background_dark">#111008</color>
+
+    <!-- Splash screen -->
+    <color name="splash_background">#1A1814</color>
+
+    <!-- Brand -->
+    <color name="gold">#B8862E</color>
+    <color name="obsidian">#1A1814</color>
+    <color name="cream">#FAFAF7</color>
+
+    <!-- Status bar tints (window chrome only) -->
+    <color name="status_bar_light">#FAFAF7</color>
+    <color name="status_bar_dark">#111008</color>
+
+</resources>
