@@ -87,7 +87,7 @@ if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
 fi
 
 # Add default JVM options here
-GRADLE_OPTS="$GRADLE_OPTS \"-Dfile.encoding=UTF-8\" \"-Duser.country=US\" \"-Duser.language=en\""
+GRADLE_OPTS="$GRADLE_OPTS -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en"
 
 # Collect all arguments for the java command
 set -- \
