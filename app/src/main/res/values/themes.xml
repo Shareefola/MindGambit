@@ -1,10 +1,9 @@
 <resources>
-    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+    <style name="Theme.MindGambit" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#6200EE</item>
-        <item name="colorPrimaryVariant">#3700B3</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorSecondary">#03DAC5</item>
-        <item name="colorOnSecondary">#000000</item>
+        <item name="colorPrimaryDark">#3700B3</item>
+        <item name="colorAccent">#03DAC5</item>
     </style>
+
+    <style name="Theme.MindGambit.Splash" parent="Theme.MindGambit" />
 </resources>
