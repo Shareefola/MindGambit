@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    List of downloadable fonts to preload on app startup.
+    This hints to the system that these fonts should be available
+    before the app is launched.
+-->
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/cormorant_garamond_regular</item>
+        <item>@font/cormorant_garamond_italic</item>
+        <item>@font/cormorant_garamond_semibold</item>
+        <item>@font/cormorant_garamond_semibold_italic</item>
+        <item>@font/cormorant_garamond_bold</item>
+        <item>@font/cormorant_garamond_bold_italic</item>
+        <item>@font/dm_sans_light</item>
+        <item>@font/dm_sans_regular</item>
+        <item>@font/dm_sans_medium</item>
+        <item>@font/dm_sans_semibold</item>
+        <item>@font/dm_sans_bold</item>
+        <item>@font/dm_mono_regular</item>
+        <item>@font/dm_mono_medium</item>
+    </array>
+</resources>

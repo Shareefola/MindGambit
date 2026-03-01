@@ -5,6 +5,7 @@ import com.mindgambit.app.data.engine.StockfishEngine
 import com.mindgambit.app.domain.model.*
 import com.mindgambit.app.domain.repository.*
 import javax.inject.Inject
+import kotlin.math.abs
 
 // ============================================================
 // MindGambit — Use Cases
