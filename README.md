@@ -37,7 +37,7 @@ Kotlin Coroutines    — async / reactive
 Stockfish 16 (NDK)   — chess engine via JNI
 Lottie               — animations
 Firebase             — analytics + crashlytics
-GitHub Actions       — CI/CD (signed APK on tag push)
+GitHub Actions       — CI/CD (signed APK + AAB on tag push)
 ```
 
 ---
@@ -107,6 +107,10 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 ## Release Build (CI/CD)
 
 Releases are built automatically by GitHub Actions when you push a version tag.
+
+The CI produces two artifacts:
+- **APK** (`MindGambit-vX.Y.Z.apk`) — direct-install artifact, also attached to the GitHub Release
+- **AAB** (`MindGambit-vX.Y.Z.aab`) — Android App Bundle for upload to Google Play Store
 
 ### One-time keystore setup
 ```bash
