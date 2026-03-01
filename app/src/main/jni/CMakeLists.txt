@@ -46,6 +46,13 @@ if(STOCKFISH_SOURCES)
     )
 endif()
 
+# Explicitly enable exceptions and RTTI for bridge.cpp, overriding any NDK
+# toolchain defaults (-fno-exceptions/-fno-rtti) that would otherwise be
+# inherited. bridge.cpp uses try/catch, std::cin, and std::cout.
+set_source_files_properties(bridge.cpp PROPERTIES
+    COMPILE_FLAGS "-fexceptions -frtti"
+)
+
 # Link Android log library for debugging
 find_library(log-lib log)
 target_link_libraries(stockfish ${log-lib})

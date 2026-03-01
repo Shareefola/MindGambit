@@ -31,6 +31,9 @@ gradle-app.setting
 local.properties
 # google-services.json is committed as a placeholder; replace with real credentials before release
 
+# CodeQL auto-detection artifacts (should never be committed)
+_codeql_detected_source_root
+
 # OS
 .DS_Store
 Thumbs.db
