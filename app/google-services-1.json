@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "269421267765",
+    "project_id": "mind-gambit",
+    "storage_bucket": "mind-gambit.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269421267765:android:726d9bd5ffc4cbf0bcda7c",
+        "android_client_info": {
+          "package_name": "com.mindgambit.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXjUyKBn8EzKXZVxWBi1g-v5ZM9Toz_Nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269421267765:android:3a01edc9dff66e95bcda7c",
+        "android_client_info": {
+          "package_name": "com.mindgambit.app.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXjUyKBn8EzKXZVxWBi1g-v5ZM9Toz_Nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
