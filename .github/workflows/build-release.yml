@@ -74,7 +74,7 @@ jobs:
         run: ./gradlew testReleaseUnitTest --no-daemon
         continue-on-error: false
 
-      # ── 8. Build Release APK ─────────────────────────────────
+      # ── 8. Build Release APK + AAB ───────────────────────────
       - name: Build signed release APK
         env:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -82,7 +82,7 @@ jobs:
           KEY_PASSWORD:      ${{ secrets.KEY_PASSWORD }}
           ANDROID_NDK_HOME:  ${{ steps.setup-ndk.outputs.ndk-path }}
         run: |
-          ./gradlew assembleRelease \
+          ./gradlew assembleRelease bundleRelease \
             --no-daemon \
             --stacktrace \
             -Pandroid.injected.signing.store.file=keystore/mindgambit.jks \
@@ -90,8 +90,8 @@ jobs:
             -Pandroid.injected.signing.key.alias=$KEY_ALIAS \
             -Pandroid.injected.signing.key.password=$KEY_PASSWORD
 
-      # ── 9. Rename APK ────────────────────────────────────────
-      - name: Rename APK
+      # ── 9. Rename APK + AAB ──────────────────────────────────
+      - name: Rename APK and AAB
         run: |
           VERSION="${{ github.ref_name }}"
           # If manual trigger, use input value
@@ -99,17 +99,28 @@ jobs:
             VERSION="${{ github.event.inputs.version_tag }}"
           fi
           APK_PATH="app/build/outputs/apk/release"
+          AAB_PATH="app/build/outputs/bundle/release"
           mv "$APK_PATH/app-release.apk" "$APK_PATH/MindGambit-${VERSION}.apk"
+          mv "$AAB_PATH/app-release.aab" "$AAB_PATH/MindGambit-${VERSION}.aab"
           echo "APK_PATH=$APK_PATH/MindGambit-${VERSION}.apk" >> $GITHUB_ENV
+          echo "AAB_PATH=$AAB_PATH/MindGambit-${VERSION}.aab" >> $GITHUB_ENV
           echo "VERSION=$VERSION" >> $GITHUB_ENV
           echo "✅ APK renamed to MindGambit-${VERSION}.apk"
+          echo "✅ AAB renamed to MindGambit-${VERSION}.aab"
 
-      # ── 10. Upload artifact (always accessible) ───────────────
+      # ── 10. Upload artifacts (always accessible) ──────────────
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MindGambit-${{ env.VERSION }}
+          name: MindGambit-${{ env.VERSION }}-apk
           path: ${{ env.APK_PATH }}
+          retention-days: 30
+
+      - name: Upload AAB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MindGambit-${{ env.VERSION }}-aab
+          path: ${{ env.AAB_PATH }}
           retention-days: 30
 
       # ── 11. Create GitHub Release ─────────────────────────────
@@ -127,12 +138,17 @@ jobs:
             2. On your Android device: **Settings → Security → Install unknown apps** → enable for your browser/Files app
             3. Open the downloaded APK and tap **Install**
 
+            ### Play Store
+            Upload `MindGambit-${{ env.VERSION }}.aab` to the Google Play Console.
+
             ### What's new
             - See commit history for changes in this release
 
             ---
             Built with ❤️ using Kotlin + Jetpack Compose + Stockfish
-          files: ${{ env.APK_PATH }}
+          files: |
+            ${{ env.APK_PATH }}
+            ${{ env.AAB_PATH }}
           draft: false
           prerelease: ${{ contains(env.VERSION, '-beta') || contains(env.VERSION, '-rc') }}
           generate_release_notes: true
