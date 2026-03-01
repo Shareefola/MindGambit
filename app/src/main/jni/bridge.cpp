@@ -6,6 +6,8 @@
 
 #include <jni.h>
 #include <android/log.h>
+#include <chrono>
+#include <iostream>
 #include <string>
 #include <thread>
 #include <mutex>

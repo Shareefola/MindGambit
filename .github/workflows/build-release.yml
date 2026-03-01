@@ -41,6 +41,7 @@ jobs:
       # ── 3. Android NDK ───────────────────────────────────────
       - name: Set up Android NDK
         uses: nttld/setup-ndk@v1
+        id: setup-ndk
         with:
           ndk-version: r27c
           add-to-path: true
@@ -68,6 +69,8 @@ jobs:
 
       # ── 7. Run unit tests ────────────────────────────────────
       - name: Run unit tests
+        env:
+          ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
         run: ./gradlew testReleaseUnitTest --no-daemon
         continue-on-error: false
 
@@ -77,6 +80,7 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS:         ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD:      ${{ secrets.KEY_PASSWORD }}
+          ANDROID_NDK_HOME:  ${{ steps.setup-ndk.outputs.ndk-path }}
         run: |
           ./gradlew assembleRelease \
             --no-daemon \

@@ -9,13 +9,11 @@ project("stockfish")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Stockfish compile flags — optimised for mobile
-set(STOCKFISH_FLAGS
+# Base flags applied to all sources (stockfish + bridge)
+set(COMMON_FLAGS
     -DNDEBUG
     -O3
     -funroll-loops
-    -fno-exceptions
-    -fno-rtti
     -DIS_64BIT
     -DUSE_POPCNT
 )
@@ -37,7 +35,16 @@ add_library(
     ${BRIDGE_SOURCES}
 )
 
-target_compile_options(stockfish PRIVATE ${STOCKFISH_FLAGS})
+# Apply common flags to the whole target
+target_compile_options(stockfish PRIVATE ${COMMON_FLAGS})
+
+# Apply -fno-exceptions/-fno-rtti only to Stockfish sources for performance;
+# bridge.cpp legitimately uses exceptions and <iostream>/<chrono>.
+if(STOCKFISH_SOURCES)
+    set_source_files_properties(${STOCKFISH_SOURCES} PROPERTIES
+        COMPILE_FLAGS "-fno-exceptions -fno-rtti"
+    )
+endif()
 
 # Link Android log library for debugging
 find_library(log-lib log)
