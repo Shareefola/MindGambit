@@ -46,20 +46,14 @@
                 Z" />
 
         <!-- Eye -->
-        <ellipse
+        <path
             android:fillColor="#1A1814"
-            android:centerX="46"
-            android:centerY="28"
-            android:radiusX="2.5"
-            android:radiusY="2.5" />
+            android:pathData="M43.5,28 A2.5,2.5,0,1,0,48.5,28 A2.5,2.5,0,1,0,43.5,28 Z" />
 
         <!-- Nostril -->
-        <ellipse
+        <path
             android:fillColor="#1A1814"
-            android:centerX="53"
-            android:centerY="35"
-            android:radiusX="1.5"
-            android:radiusY="1.5" />
+            android:pathData="M51.5,35 A1.5,1.5,0,1,0,54.5,35 A1.5,1.5,0,1,0,51.5,35 Z" />
 
     </group>
 
