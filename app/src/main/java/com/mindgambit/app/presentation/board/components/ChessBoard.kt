@@ -1,5 +1,6 @@
 package com.mindgambit.app.presentation.board.components
 
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
