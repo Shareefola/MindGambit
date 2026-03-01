@@ -50,8 +50,6 @@ class OpeningRepositoryImpl @Inject constructor(
 
     companion object {
 
-        val ALL_OPENINGS = listOf(LONDON, JOBAVA_LONDON, PIRC_DEFENSE)
-
         // ── LONDON SYSTEM ─────────────────────────────────────
         private val LONDON = Opening(
             id          = OpeningId.LONDON,
@@ -255,5 +253,7 @@ class OpeningRepositoryImpl @Inject constructor(
                 )
             )
         )
+
+        val ALL_OPENINGS = listOf(LONDON, JOBAVA_LONDON, PIRC_DEFENSE)
     }
 }
